@@ -24,6 +24,7 @@ int main()
         cout << "enter 3 for modifing the element in the vector" << endl;
 
         cout << "enter 4 for deleting the element in the vector" << endl;
+        cout << "________________________________" << endl;
 
         int input;
         switch (user)
@@ -32,6 +33,9 @@ int main()
             cout << "enter the element in the vector" << endl;
             cin >> input;
             v1.push_back(input);
+
+            cout << "Updated vector: ";
+
             for (int v2 : v1)
             {
                 cout << v2 << " ";
@@ -55,6 +59,7 @@ int main()
             cin >> value;
 
             v1[input] = value;
+            cout << "Updated vector: ";
 
             for (int v2 : v1)
             {
@@ -63,8 +68,13 @@ int main()
 
             break;
         case 4:
-            cout << "for deleting the element in the vector" << endl;
-            v1.pop_back();
+            cout << "for deleting the element in the vector enter the index of element" << endl;
+            int index;
+            cin >> index;
+            v1.erase(v1.begin() + index);
+            
+            cout << "Element deleted. Updated vector: ";
+            cout << "Updated vector: ";
             for (int v2 : v1)
             {
                 cout << v2 << " ";
@@ -74,7 +84,8 @@ int main()
         default:
             break;
         }
-        cout << "________________________________" << endl;
+        cout << endl
+             << "________________________________" << endl;
         cin >> user;
     } while (user != 0);
 }
