@@ -5,10 +5,23 @@
 // Pop: 1 (Remove the top element)
 // Output Example:
 // Stack after operations: [10, 20]
-#include<iostream>
+#include <iostream>
+#include <stack>
 
 using namespace std;
 
-int main(){
-    
+int main() {
+    stack<int> stk;
+
+    stk.push(10);
+    stk.push(20);
+    stk.push(30);
+
+    cout << "Top of stack: " << stk.top() << endl;
+
+    stk.pop();
+
+    cout << "Top after pop: " << stk.top() << endl;
+
+    return 0;
 }
